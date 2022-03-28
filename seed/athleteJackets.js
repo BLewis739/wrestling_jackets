@@ -16,6 +16,11 @@ const main = async () => {
     athletes: []
   })
 
+  order1.save()
+  order2.save()
+
+  const jackets = []
+
   const athlete1 = await new Athlete({
     name: 'Bryan Ayala',
     abbrevName: 'B. Ayala'
@@ -35,7 +40,7 @@ const main = async () => {
     isBeforeJacket: false,
     orderNum: order2._id
   })
-  jacket1.save()
+  jackets.push(jacket1)
 
   const athlete2 = await new Athlete({
     name: 'Tenny Dwyer',
@@ -56,7 +61,7 @@ const main = async () => {
     isBeforeJacket: false,
     orderNum: order2._id
   })
-  jacket2.save()
+  jackets.push(jacket2)
 
   const athlete3 = await new Athlete({ name: 'MTC', abbrevName: 'MTC' })
   athlete3.save()
@@ -74,7 +79,7 @@ const main = async () => {
     isBeforeJacket: false,
     orderNum: order2._id
   })
-  jacket3.save()
+  jackets.push(jacket3)
 
   const athlete4 = await new Athlete({
     name: 'Andrew Flores',
@@ -95,7 +100,7 @@ const main = async () => {
     isBeforeJacket: false,
     orderNum: order2._id
   })
-  jacket4.save()
+  jackets.push(jacket4)
 
   const athlete5 = await new Athlete({
     name: 'Luke Etheridge',
@@ -116,7 +121,7 @@ const main = async () => {
     isBeforeJacket: false,
     orderNum: order2._id
   })
-  jacket5.save()
+  jackets.push(jacket5)
 
   const athlete6 = await new Athlete({
     name: 'Jaden Richemond',
@@ -137,7 +142,7 @@ const main = async () => {
     isBeforeJacket: false,
     orderNum: order2._id
   })
-  jacket6.save()
+  jackets.push(jacket6)
 
   const athlete7 = await new Athlete({
     name: 'Kevin Caballero',
@@ -158,7 +163,7 @@ const main = async () => {
     isBeforeJacket: false,
     orderNum: order2._id
   })
-  jacket7.save()
+  jackets.push(jacket7)
 
   const athlete8 = await new Athlete({
     name: 'Jaime Nunez',
@@ -179,7 +184,7 @@ const main = async () => {
     isBeforeJacket: false,
     orderNum: order2._id
   })
-  jacket8.save()
+  jackets.push(jacket8)
 
   const athlete9 = await new Athlete({
     name: 'DJ Johnston',
@@ -200,7 +205,7 @@ const main = async () => {
     isBeforeJacket: false,
     orderNum: order2._id
   })
-  jacket9.save()
+  jackets.push(jacket9)
 
   const athlete10 = await new Athlete({
     name: 'Christian Calderon',
@@ -221,7 +226,7 @@ const main = async () => {
     isBeforeJacket: false,
     orderNum: order2._id
   })
-  jacket10.save()
+  jackets.push(jacket10)
 
   const athlete11 = await new Athlete({
     name: 'Natnael Abbayehu',
@@ -242,7 +247,7 @@ const main = async () => {
     isBeforeJacket: false,
     orderNum: order2._id
   })
-  jacket11.save()
+  jackets.push(jacket11)
 
   const athlete12 = await new Athlete({
     name: 'Billy Sullivan',
@@ -263,7 +268,7 @@ const main = async () => {
     isBeforeJacket: false,
     orderNum: order2._id
   })
-  jacket12.save()
+  jackets.push(jacket12)
 
   const athlete13 = await new Athlete({
     name: 'Armando Reyes',
@@ -284,7 +289,7 @@ const main = async () => {
     isBeforeJacket: false,
     orderNum: order2._id
   })
-  jacket13.save()
+  jackets.push(jacket13)
 
   const athlete14 = await new Athlete({
     name: 'Fatima Mancia',
@@ -305,7 +310,7 @@ const main = async () => {
     isBeforeJacket: false,
     orderNum: order2._id
   })
-  jacket14.save()
+  jackets.push(jacket14)
 
   const athlete15 = await new Athlete({
     name: 'Jonathan Flores',
@@ -326,7 +331,7 @@ const main = async () => {
     isBeforeJacket: false,
     orderNum: order2._id
   })
-  jacket15.save()
+  jackets.push(jacket15)
 
   const athlete16 = await new Athlete({
     name: 'Jonathan Mejia',
@@ -347,7 +352,7 @@ const main = async () => {
     isBeforeJacket: false,
     orderNum: order2._id
   })
-  jacket16.save()
+  jackets.push(jacket16)
 
   const athlete17 = await new Athlete({
     name: 'Rafael Maya',
@@ -368,7 +373,7 @@ const main = async () => {
     isBeforeJacket: false,
     orderNum: order2._id
   })
-  jacket17.save()
+  jackets.push(jacket17)
 
   const athlete18 = await new Athlete({
     name: 'Outtman Eddahbi',
@@ -389,7 +394,7 @@ const main = async () => {
     isBeforeJacket: false,
     orderNum: order2._id
   })
-  jacket18.save()
+  jackets.push(jacket18)
 
   const athlete19 = await new Athlete({
     name: 'Juan Murillo',
@@ -410,7 +415,7 @@ const main = async () => {
     isBeforeJacket: false,
     orderNum: order2._id
   })
-  jacket19.save()
+  jackets.push(jacket19)
 
   const athlete20 = await new Athlete({
     name: 'Sam Quinonez',
@@ -431,7 +436,7 @@ const main = async () => {
     isBeforeJacket: false,
     orderNum: order2._id
   })
-  jacket20.save()
+  jackets.push(jacket20)
 
   const athlete21 = await new Athlete({
     name: 'Anthony Bitencourt',
@@ -452,7 +457,7 @@ const main = async () => {
     isBeforeJacket: false,
     orderNum: order2._id
   })
-  jacket21.save()
+  jackets.push(jacket21)
 
   const athlete22 = await new Athlete({
     name: 'Sohib Charkaoui',
@@ -473,7 +478,7 @@ const main = async () => {
     isBeforeJacket: false,
     orderNum: order2._id
   })
-  jacket22.save()
+  jackets.push(jacket22)
 
   const athlete23 = await new Athlete({
     name: 'Yunus Bracaj',
@@ -494,7 +499,7 @@ const main = async () => {
     isBeforeJacket: false,
     orderNum: order2._id
   })
-  jacket23.save()
+  jackets.push(jacket23)
 
   const athlete24 = await new Athlete({
     name: 'Asuzena Rojas',
@@ -515,7 +520,7 @@ const main = async () => {
     isBeforeJacket: false,
     orderNum: order2._id
   })
-  jacket24.save()
+  jackets.push(jacket24)
 
   const athlete25 = await new Athlete({
     name: 'Coach Fife',
@@ -536,13 +541,8 @@ const main = async () => {
     isBeforeJacket: false,
     orderNum: order2._id
   })
-  jacket25.save()
+  jackets.push(jacket25)
 
-  const athlete26 = await new Athlete({
-    name: 'Kevin Caballero',
-    abbrevName: 'K. Caballero'
-  })
-  athlete26.save()
   const jacket26 = await new Jacket({
     athlete: athlete7._id,
     emptyStars: 2,
@@ -557,13 +557,8 @@ const main = async () => {
     isBeforeJacket: false,
     orderNum: order1._id
   })
-  jacket26.save()
+  jackets.push(jacket26)
 
-  const athlete27 = await new Athlete({
-    name: 'Jaden Richemond',
-    abbrevName: 'J. Richemond'
-  })
-  athlete27.save()
   const jacket27 = await new Jacket({
     athlete: athlete6._id,
     emptyStars: 1,
@@ -578,13 +573,8 @@ const main = async () => {
     isBeforeJacket: false,
     orderNum: order1._id
   })
-  jacket27.save()
+  jackets.push(jacket27)
 
-  const athlete28 = await new Athlete({
-    name: 'Luke Etheridge',
-    abbrevName: 'L. Etheridge'
-  })
-  athlete28.save()
   const jacket28 = await new Jacket({
     athlete: athlete5._id,
     emptyStars: 1,
@@ -599,13 +589,8 @@ const main = async () => {
     isBeforeJacket: false,
     orderNum: order1._id
   })
-  jacket28.save()
+  jackets.push(jacket28)
 
-  const athlete29 = await new Athlete({
-    name: 'Andrew Flores',
-    abbrevName: 'A. Flores'
-  })
-  athlete29.save()
   const jacket29 = await new Jacket({
     athlete: athlete4._id,
     emptyStars: 0,
@@ -620,10 +605,8 @@ const main = async () => {
     isBeforeJacket: false,
     orderNum: order1._id
   })
-  jacket29.save()
+  jackets.push(jacket29)
 
-  const athlete30 = await new Athlete({ name: 'MTC', abbrevName: 'MTC' })
-  athlete30.save()
   const jacket30 = await new Jacket({
     athlete: athlete3._id,
     emptyStars: 0,
@@ -638,13 +621,8 @@ const main = async () => {
     isBeforeJacket: false,
     orderNum: order1._id
   })
-  jacket30.save()
+  jackets.push(jacket30)
 
-  const athlete31 = await new Athlete({
-    name: 'Tenny Dwyer',
-    abbrevName: 'T. Dwyer'
-  })
-  athlete31.save()
   const jacket31 = await new Jacket({
     athlete: athlete2._id,
     emptyStars: 1,
@@ -659,13 +637,8 @@ const main = async () => {
     isBeforeJacket: false,
     orderNum: order1._id
   })
-  jacket31.save()
+  jackets.push(jacket31)
 
-  const athlete32 = await new Athlete({
-    name: 'Bryan Ayala',
-    abbrevName: 'B. Ayala'
-  })
-  athlete32.save()
   const jacket32 = await new Jacket({
     athlete: athlete1._id,
     emptyStars: 0,
@@ -680,13 +653,8 @@ const main = async () => {
     isBeforeJacket: false,
     orderNum: order1._id
   })
-  jacket32.save()
+  jackets.push(jacket32)
 
-  const athlete33 = await new Athlete({
-    name: 'Billy Sullivan',
-    abbrevName: 'B. Sullivan'
-  })
-  athlete33.save()
   const jacket33 = await new Jacket({
     athlete: athlete12._id,
     emptyStars: 0,
@@ -701,13 +669,8 @@ const main = async () => {
     isBeforeJacket: false,
     orderNum: order1._id
   })
-  jacket33.save()
+  jackets.push(jacket33)
 
-  const athlete34 = await new Athlete({
-    name: 'Natnael Abbayehu',
-    abbrevName: 'N. Abbayehu'
-  })
-  athlete34.save()
   const jacket34 = await new Jacket({
     athlete: athlete11._id,
     emptyStars: 2,
@@ -722,13 +685,8 @@ const main = async () => {
     isBeforeJacket: false,
     orderNum: order1._id
   })
-  jacket34.save()
+  jackets.push(jacket34)
 
-  const athlete35 = await new Athlete({
-    name: 'Christian Calderon',
-    abbrevName: 'C. Calderon'
-  })
-  athlete35.save()
   const jacket35 = await new Jacket({
     athlete: athlete10._id,
     emptyStars: 1,
@@ -743,13 +701,8 @@ const main = async () => {
     isBeforeJacket: false,
     orderNum: order1._id
   })
-  jacket35.save()
+  jackets.push(jacket35)
 
-  const athlete36 = await new Athlete({
-    name: 'DJ Johnston',
-    abbrevName: 'D. Johnston'
-  })
-  athlete36.save()
   const jacket36 = await new Jacket({
     athlete: athlete9._id,
     emptyStars: 2,
@@ -764,13 +717,8 @@ const main = async () => {
     isBeforeJacket: false,
     orderNum: order1._id
   })
-  jacket36.save()
+  jackets.push(jacket36)
 
-  const athlete37 = await new Athlete({
-    name: 'Jaime Nunez',
-    abbrevName: 'J. Nunez'
-  })
-  athlete37.save()
   const jacket37 = await new Jacket({
     athlete: athlete8._id,
     emptyStars: 1,
@@ -785,7 +733,10 @@ const main = async () => {
     isBeforeJacket: false,
     orderNum: order1._id
   })
-  jacket37.save()
+  jackets.push(jacket37)
+
+  await Jacket.insertMany(jackets)
+  console.log('Created Jackets, Athletes, and Orders')
 }
 const run = async () => {
   await main()
