@@ -32,10 +32,12 @@ The site will also have functionality to be able to handle future orders. New ja
 
 ## **_Diagrams_**
 
-ERD and Component Hierarchy Diagram
+[ERD](/ERD.png)
+
+[Component Hierarchy Diagram](/ComponentHierarchyDiagram.png)
 
 ---
 
 ## **_Trello_**
 
-Link to the Trello board
+Link to the [Trello](https://trello.com/b/uv7tuRlM/wrestling-jackets-project) board
