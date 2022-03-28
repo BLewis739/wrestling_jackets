@@ -1,0 +1,24 @@
+{
+  "name": "wrestling_jackets",
+  "version": "1.0.0",
+  "description": "### A full stack app using MERN (MongoDB, Express, React.js, and Node.js)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BLewis739/wrestling_jackets.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BLewis739/wrestling_jackets/issues"
+  },
+  "homepage": "https://github.com/BLewis739/wrestling_jackets#readme",
+  "dependencies": {
+    "mongoose": "^6.2.9",
+    "react-router-dom": "^6.2.2"
+  }
+}
