@@ -19,13 +19,31 @@ app.get('/', (req, res) => {
 })
 
 app.get('/jackets', async (req, res) => {
+  const athletes = await Athlete.find()
   const jackets = await Jacket.find()
-  res.json(jackets)
+  res.send({ athletes, jackets })
 })
 
 app.get('/athletes', async (req, res) => {
   const athletes = await Athlete.find()
   res.json(athletes)
+})
+
+app.get('/orders', async (req, res) => {
+  const orders = await Order.find()
+  res.json(orders)
+})
+
+app.post('/jackets', async (req, res) => {
+  try {
+    const jacket = await new Jacket(req.body)
+    await jacket.save()
+    return res.status(201).json({
+      jacket
+    })
+  } catch (error) {
+    return res.status(500).json({ error: error.message })
+  }
 })
 
 app.listen(PORT, () => {

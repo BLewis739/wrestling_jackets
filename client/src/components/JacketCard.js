@@ -10,10 +10,22 @@ const JacketCard = ({ athletes, athleteId, jacket }) => {
 
   const getStarBannerArray = (emptyStars, fullStars) => {
     for (let i = 0; i < emptyStars; i++) {
-      starBanner.push('https://imgur.com/AxSbxh3')
+      starBanner.push(
+        <img
+          src="https://imgur.com/AxSbxh3.png"
+          alt="empty-star"
+          key={Math.random(0, 100) * 100}
+        ></img>
+      )
     }
     for (let i = 0; i < fullStars; i++) {
-      starBanner.push('https://imgur.com/OSNaUNN')
+      starBanner.push(
+        <img
+          src="https://imgur.com/OSNaUNN.png"
+          alt="full-star"
+          key={Math.random(0, 100) * 100}
+        ></img>
+      )
     }
   }
 
@@ -29,10 +41,7 @@ const JacketCard = ({ athletes, athleteId, jacket }) => {
       <div className="award3">{jacket.award3}</div>
       <div className="award4">{jacket.award4}</div>
       <div className="award5">{jacket.award5}</div>
-      <div className="starBanner">
-        <img src="https://imgur.com/AxSbxh3.png"></img>
-        <img src="https://imgur.com/OSNaUNN.png"></img>
-      </div>
+      <div className="starBanner">{starBanner}</div>
     </div>
   )
 }

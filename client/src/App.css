@@ -1,35 +1,39 @@
+/* 
+-------------------
+Jacket card styling 
+-------------------
+*/
+
 .jacket-card {
-  width: 800px;
-  height: 700px;
+  width: 600px;
+  height: 525px;
   border: solid black 1px;
   position: relative;
   text-align: center;
   color: white;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: bold;
 }
 
 .jacket-card img {
-  width: 800px;
-  height: 700px;
+  width: 600px;
+  height: 525px;
 }
 
 .name {
   position: absolute;
   left: 10%;
   right: 50%;
-  top: 40%;
-  bottom: 40%;
-  font-size: 28px;
+  top: 41%;
+  font-size: 22px;
 }
 
 .role {
   position: absolute;
   left: 10%;
   right: 50%;
-  top: 45%;
-  bottom: 35%;
+  top: 46.5%;
 }
 
 .award1 {
@@ -74,8 +78,7 @@
 
 .starBanner {
   position: absolute;
-  left: 39%;
-  right: 11%;
+  left: 61%;
   top: 50%;
   bottom: 45%;
 }
@@ -83,4 +86,61 @@
 .starBanner img {
   width: 25px;
   height: 25px;
+}
+
+/* 
+-------------------
+Nav Bar Styling
+-------------------
+*/
+
+nav {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #333333;
+  height: 30px;
+}
+
+.navLink {
+  color: white;
+  text-decoration: none;
+  border-right: #666666 solid 1px;
+  padding: 6px 20px;
+}
+
+.navLink:hover {
+  background-color: #999999;
+  color: black;
+}
+
+/*
+-----------------------
+New Jacket Page Styling
+-----------------------
+*/
+
+.new-jacket-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.new-jacket-form input,
+select,
+button {
+  display: block;
+  height: 30px;
+  width: 180px;
+  margin-bottom: 10px;
+}
+
+.new-jacket-form button {
+  width: 130px;
+}
+
+.new-jacket-form .star-input {
+  width: 80px;
+  font-size: 10px;
+  display: inline-block;
+  margin-right: 10px;
 }

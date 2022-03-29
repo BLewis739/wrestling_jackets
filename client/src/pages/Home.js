@@ -8,17 +8,10 @@ const Home = () => {
   const [jackets, setJackets] = useState([])
 
   useEffect(() => {
-    const getAthletes = async () => {
-      const res = await axios.get(`http://localhost:3001/athletes`)
-      setAthletes(res.data)
-    }
-    getAthletes()
-  }, [])
-
-  useEffect(() => {
     const getJackets = async () => {
       const res = await axios.get(`http://localhost:3001/jackets`)
-      setJackets(res.data)
+      setAthletes(res.data.athletes)
+      setJackets(res.data.jackets)
     }
     getJackets()
   }, [])
