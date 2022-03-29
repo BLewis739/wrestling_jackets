@@ -29,6 +29,16 @@ app.get('/athletes', async (req, res) => {
   res.json(athletes)
 })
 
+app.get('/athletes/:name', async (req, res) => {
+  const athlete = await Athlete.find(req.params)
+  res.json(athlete)
+})
+
+app.get('/jackets/:id', async (req, res) => {
+  const jacket = await Jacket.find(req.params)
+  res.json(jacket)
+})
+
 app.get('/orders', async (req, res) => {
   const orders = await Order.find()
   res.json(orders)
@@ -43,6 +53,31 @@ app.post('/jackets', async (req, res) => {
     })
   } catch (error) {
     return res.status(500).json({ error: error.message })
+  }
+})
+
+app.post('/athletes', async (req, res) => {
+  try {
+    const athlete = await new Athlete(req.body)
+    await athlete.save()
+    return res.status(201).json({
+      athlete
+    })
+  } catch (error) {
+    return res.status(500).json({ error: error.message })
+  }
+})
+
+app.delete('/athletes/:id', async (req, res) => {
+  try {
+    const { id } = req.params
+    const deleted = await Athlete.findByIdAndDelete(id)
+    if (deleted) {
+      return res.status(200).send('Athlete deleted')
+    }
+    throw new Error('Athlete not found')
+  } catch (error) {
+    return res.status(500).send(error.message)
   }
 })
 
