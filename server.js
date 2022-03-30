@@ -21,6 +21,11 @@ app.get('/', (req, res) => {
 app.get('/jackets', async (req, res) => {
   const athletes = await Athlete.find()
   const jackets = await Jacket.find()
+    .populate({
+      path: 'athlete',
+      model: Athlete
+    })
+    .populate('orderNum')
   res.send({ athletes, jackets })
 })
 
@@ -29,13 +34,20 @@ app.get('/athletes', async (req, res) => {
   res.json(athletes)
 })
 
-app.get('/athletes/:name', async (req, res) => {
-  const athlete = await Athlete.find(req.params)
+app.get('/athletes/:id', async (req, res) => {
+  const { id } = req.params
+  const athlete = await Athlete.findById(id)
   res.json(athlete)
 })
 
 app.get('/jackets/:id', async (req, res) => {
-  const jacket = await Jacket.find(req.params)
+  const { id } = req.params
+  const jacket = await Jacket.findById(id)
+    .populate({
+      path: 'athlete',
+      model: Athlete
+    })
+    .populate('orderNum')
   res.json(jacket)
 })
 
@@ -76,6 +88,41 @@ app.delete('/athletes/:id', async (req, res) => {
       return res.status(200).send('Athlete deleted')
     }
     throw new Error('Athlete not found')
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+})
+
+app.delete('/jackets/:id', async (req, res) => {
+  try {
+    const { id } = req.params
+    const deleted = await Jacket.findByIdAndDelete(id)
+    if (deleted) {
+      return res.status(200).send('Jacket deleted')
+    }
+    throw new Error('Jacket not found')
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+})
+
+app.put('/jackets/:id', async (req, res) => {
+  try {
+    const { id } = req.params
+    await Jacket.findByIdAndUpdate(
+      id,
+      req.body,
+      { new: true },
+      (err, jacket) => {
+        if (err) {
+          res.status(500).send(err)
+        }
+        if (!jacket) {
+          res.status(500).send('Jacket not found!')
+        }
+        return res.status(200).json(jacket)
+      }
+    )
   } catch (error) {
     return res.status(500).send(error.message)
   }

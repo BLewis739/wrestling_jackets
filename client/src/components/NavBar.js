@@ -12,8 +12,11 @@ const NavBar = () => {
       <Link className="navLink" to="/AddJacket">
         Add Jacket
       </Link>
-      <Link className="navLink" to="/AdjustJacket">
+      <Link className="navLink" to="/EditJacket">
         Edit Jacket
+      </Link>
+      <Link className="navLink" to="/DeleteJacket">
+        Delete Jacket
       </Link>
     </nav>
   )

@@ -2,9 +2,7 @@ import JacketCard from '../components/JacketCard'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 
-const Home = ({ athletes, setAthletes }) => {
-  const [jackets, setJackets] = useState([])
-
+const Home = ({ setAthletes, jackets, setJackets }) => {
   useEffect(() => {
     const getJackets = async () => {
       const res = await axios.get(`http://localhost:3001/jackets`)
@@ -18,12 +16,7 @@ const Home = ({ athletes, setAthletes }) => {
     <div>
       <h1>Jackets</h1>
       {jackets.map((jacket) => (
-        <JacketCard
-          athletes={athletes}
-          athleteId={jacket.athlete}
-          key={jacket._id}
-          jacket={jacket}
-        />
+        <JacketCard key={jacket._id} jacket={jacket} />
       ))}
     </div>
   )

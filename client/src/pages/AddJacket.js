@@ -8,12 +8,10 @@ const AddJacket = ({
   handleChange,
   setNewJacket,
   athletes,
-  setAthletes
+  setAthletes,
+  setOrders,
+  orders
 }) => {
-  const [newAthlete, setNewAthlete] = useState({
-    name: '',
-    abbrevName: ''
-  })
   const [newId, setNewId] = useState('')
 
   const getAthletes = async () => {
@@ -23,6 +21,13 @@ const AddJacket = ({
 
   useEffect(() => {
     getAthletes()
+
+    const getOrders = async () => {
+      const res = await axios.get(`http://localhost:3001/orders`)
+      setOrders(res.data)
+    }
+
+    getOrders()
   }, [])
 
   let navigate = useNavigate()
@@ -45,31 +50,27 @@ const AddJacket = ({
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    if (newJacket.athlete === 'other') {
-      await axios
-        .post('http://localhost:3001/athletes', newAthlete)
-        .then((res) => console.log('successful add'))
-        .catch((err) => console.log(err.data))
-
-      //THIS SHOULD WORK BUT IT DOESN'T
-
-      // const newId = await axios.get(
-      //   `http://localhost:3001/athletes/${newAthlete.name}`
-      // )
-      // await setNewJacket({
-      //   ...newJacket,
-      //   athlete: newId.data[0]._id
-      // })
-    }
-
-    //navigate('/')
-  }
-
-  const postNewJacket = () => {
     axios
       .post('http://localhost:3001/jackets', newJacket)
       .then((res) => console.log('successful add'))
       .catch((err) => console.log(err.data))
+
+    setNewJacket({
+      athlete: '',
+      emptyStars: 0,
+      fullStars: 0,
+      role: '',
+      award1: '',
+      award2: '',
+      award3: '',
+      award4: '',
+      award5: '',
+      isNewJacket: true,
+      isBeforeJacket: false,
+      orderNum: ''
+    })
+
+    navigate('/')
   }
 
   const disableBtn = () => {
@@ -100,24 +101,7 @@ const AddJacket = ({
                 {athlete.name}
               </option>
             ))}
-            <option value="other">New Athlete</option>
           </select>
-
-          <input
-            type={hiddenField}
-            placeholder="Full Name"
-            onChange={(e) =>
-              setNewAthlete({ ...newAthlete, name: e.target.value })
-            }
-          ></input>
-
-          <input
-            type={hiddenField}
-            placeholder="Name on Jacket"
-            onChange={(e) =>
-              setNewAthlete({ ...newAthlete, abbrevName: e.target.value })
-            }
-          ></input>
 
           <div className="years">
             <input

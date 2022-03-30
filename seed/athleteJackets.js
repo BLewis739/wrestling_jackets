@@ -16,8 +16,15 @@ const main = async () => {
     athletes: []
   })
 
+  const order3 = await new Order({
+    orderNum: 3,
+    openOrder: true,
+    athletes: []
+  })
+
   order1.save()
   order2.save()
+  order3.save()
 
   const jackets = []
 

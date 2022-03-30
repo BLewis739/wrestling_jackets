@@ -1,9 +1,5 @@
-const JacketCard = ({ athletes, athleteId, jacket }) => {
-  const athleteObject = { athletes }.athletes.filter((athlete) => {
-    return athlete._id === { athleteId }.athleteId
-  })
-
-  const abbrevName = athleteObject[0].abbrevName
+const JacketCard = ({ jacket }) => {
+  const abbrevName = jacket.athlete.abbrevName
   const emptyStars = jacket.emptyStars
   const fullStars = jacket.fullStars
   const starBanner = []

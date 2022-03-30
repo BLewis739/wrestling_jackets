@@ -115,9 +115,9 @@ nav {
 }
 
 /*
------------------------
+----------------------------------------
 New Jacket Page Styling
------------------------
+----------------------------------------
 */
 
 .new-jacket-form {
@@ -173,4 +173,60 @@ button {
 
 .new-jacket-form .add-new-athlete:hover {
   background-color: #dddddd;
+}
+
+/*
+----------------------------------------
+New Athlete Page Styling
+----------------------------------------
+*/
+
+.new-athlete-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.new-athlete-form input,
+select,
+button {
+  display: block;
+  height: 30px;
+  width: 180px;
+  margin-bottom: 10px;
+}
+
+.new-athlete-form button {
+  width: 130px;
+}
+
+.new-athlete-form p {
+  width: 400px;
+}
+
+/*
+------------------------------
+Delete Athlete Page Styling
+------------------------------
+*/
+
+.delete-jacket {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+}
+
+/*
+------------------------------
+Edit Athlete Page Styling
+------------------------------
+*/
+
+.edit-jacket {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+}
+
+.edit-jacket .right-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
 }
