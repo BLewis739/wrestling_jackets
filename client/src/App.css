@@ -121,6 +121,11 @@ New Jacket Page Styling
 -----------------------
 */
 
+.new-jacket-form {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+}
+
 .new-jacket-form form {
   display: flex;
   flex-direction: column;
@@ -144,4 +149,25 @@ button {
   font-size: 10px;
   display: inline-block;
   margin-right: 10px;
+}
+
+.new-jacket-form .right-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.new-jacket-form #athlete {
+  margin-top: 15px;
+}
+
+.new-jacket-form .add-new-athlete {
+  border: solid black 1px;
+  padding: 5px 15px;
+  border-radius: 2px;
+  text-decoration: none;
+  font-size: 14px;
+  font-family: Helvetica, sans-serif;
+  background-color: #eeeeee;
+  color: black;
 }

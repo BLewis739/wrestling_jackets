@@ -16,16 +16,6 @@ const Home = () => {
     getJackets()
   }, [])
 
-  console.log('Jackets')
-  console.log(jackets)
-  console.log('Athletes')
-  console.log(athletes)
-  jackets.map((jacket) =>
-    console.log(
-      athletes.filter((athlete) => athlete._id === jacket.athlete)[0].name
-    )
-  )
-
   return (
     <div>
       <h1>Jackets</h1>

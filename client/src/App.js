@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import NavBar from './components/NavBar'
 import About from './pages/About'
 import AddJacket from './pages/AddJacket'
+import AddAthlete from './pages/AddAthlete'
 import { useState } from 'react'
 
 const App = () => {
@@ -54,6 +55,7 @@ const App = () => {
               />
             }
           />
+          <Route path="AddAthlete" element={<AddAthlete />} />
         </Routes>
       </main>
     </div>
