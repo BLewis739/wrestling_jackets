@@ -1,10 +1,8 @@
 import JacketCard from '../components/JacketCard'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
 
-const Home = () => {
-  const [athletes, setAthletes] = useState([])
+const Home = ({ athletes, setAthletes }) => {
   const [jackets, setJackets] = useState([])
 
   useEffect(() => {

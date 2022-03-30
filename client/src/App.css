@@ -12,7 +12,7 @@ Jacket card styling
   text-align: center;
   color: white;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
 }
 
@@ -31,7 +31,6 @@ Jacket card styling
 
 .role {
   position: absolute;
-  font-size: 14px;
   left: 10%;
   right: 50%;
   top: 46.5%;
@@ -170,4 +169,8 @@ button {
   font-family: Helvetica, sans-serif;
   background-color: #eeeeee;
   color: black;
+}
+
+.new-jacket-form .add-new-athlete:hover {
+  background-color: #dddddd;
 }

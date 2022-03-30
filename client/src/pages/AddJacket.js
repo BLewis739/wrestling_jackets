@@ -2,8 +2,14 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useNavigate, Link } from 'react-router-dom'
 
-const AddJacket = ({ hiddenField, newJacket, handleChange, setNewJacket }) => {
-  const [athletes, setAthletes] = useState([])
+const AddJacket = ({
+  hiddenField,
+  newJacket,
+  handleChange,
+  setNewJacket,
+  athletes,
+  setAthletes
+}) => {
   const [newAthlete, setNewAthlete] = useState({
     name: '',
     abbrevName: ''

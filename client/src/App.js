@@ -8,6 +8,7 @@ import AddAthlete from './pages/AddAthlete'
 import { useState } from 'react'
 
 const App = () => {
+  const [athletes, setAthletes] = useState([])
   const [hiddenField, setHiddenField] = useState('hidden')
   const [newJacket, setNewJacket] = useState({
     athlete: '',
@@ -42,7 +43,10 @@ const App = () => {
       </header>
       <main>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route
+            path="/"
+            element={<Home athletes={athletes} setAthletes={setAthletes} />}
+          />
           <Route path="About" element={<About />} />
           <Route
             path="AddJacket"
@@ -52,6 +56,8 @@ const App = () => {
                 handleChange={handleChange}
                 newJacket={newJacket}
                 setNewJacket={setNewJacket}
+                athletes={athletes}
+                setAthletes={setAthletes}
               />
             }
           />
