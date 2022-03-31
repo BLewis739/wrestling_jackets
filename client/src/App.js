@@ -75,6 +75,9 @@ const App = () => {
                 setAthletes={setAthletes}
                 jackets={jackets}
                 setJackets={setJackets}
+                athletesWithJackets={athletesWithJackets}
+                setAthletesWithJackets={setAthletesWithJackets}
+                newJacket={newJacket}
               />
             }
           />

@@ -1,4 +1,4 @@
-const JacketCard = ({ jacket }) => {
+const JacketCard = ({ jacket, status }) => {
   const abbrevName = jacket.athlete.abbrevName
   const emptyStars = jacket.emptyStars
   const fullStars = jacket.fullStars
@@ -27,9 +27,22 @@ const JacketCard = ({ jacket }) => {
 
   getStarBannerArray(emptyStars, fullStars)
 
+  let fade = 'noFade'
+  let starBannerClass = 'starBanner'
+
+  const statusFade = () => {
+    if (status === 'Before Update') {
+      fade = 'fade'
+      starBannerClass = 'starBannerFade'
+    }
+  }
+
+  statusFade()
+
   return (
     <div className="jacket-card">
-      <img src="https://i.imgur.com/R5gPDhR.png"></img>
+      <img className={fade} src="https://i.imgur.com/R5gPDhR.png"></img>
+      <div className="status">{status}</div>
       <div className="name">{abbrevName}</div>
       <div className="role">{jacket.role}</div>
       <div className="award1">{jacket.award1}</div>
@@ -37,7 +50,7 @@ const JacketCard = ({ jacket }) => {
       <div className="award3">{jacket.award3}</div>
       <div className="award4">{jacket.award4}</div>
       <div className="award5">{jacket.award5}</div>
-      <div className="starBanner">{starBanner}</div>
+      <div className={starBannerClass}>{starBanner}</div>
     </div>
   )
 }
