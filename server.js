@@ -10,6 +10,8 @@ const { Order } = require('./models')
 
 const app = express()
 
+app.use(express.static(`${__dirname}/client/build`))
+
 app.use(cors())
 app.use(express.json())
 app.use(logger('dev'))
@@ -148,6 +150,10 @@ app.put('/jackets/:id', async (req, res) => {
   } catch (error) {
     return res.status(500).send(error.message)
   }
+})
+
+app.get('/*', (req, res) => {
+  res.sendFile(`${__dirname}/client/build/index.html`)
 })
 
 app.listen(PORT, () => {
