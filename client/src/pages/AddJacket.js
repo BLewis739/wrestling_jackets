@@ -1,18 +1,18 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useNavigate, Link } from 'react-router-dom'
+import JacketCard from '../components/JacketCard'
 
 const AddJacket = ({
-  hiddenField,
   newJacket,
-  handleChange,
   setNewJacket,
   athletes,
   setAthletes,
   setOrders,
-  orders
+  selectedAthlete,
+  setSelectedAthlete
 }) => {
-  const [newId, setNewId] = useState('')
+  const [isAthletePicked, setIsAthletePicked] = useState(false)
 
   const getAthletes = async () => {
     const res = await axios.get(`http://localhost:3001/athletes`)
@@ -33,18 +33,15 @@ const AddJacket = ({
   let navigate = useNavigate()
 
   const generateSampleJacket = () => {
-    return (
-      <div className="jacket-card">
-        <img src="https://i.imgur.com/R5gPDhR.png"></img>
-        <div className="name">{newJacket.athlete}</div>
-        <div className="role">{newJacket.role}</div>
-        <div className="award1">{newJacket.award1}</div>
-        <div className="award2">{newJacket.award2}</div>
-        <div className="award3">{newJacket.award3}</div>
-        <div className="award4">{newJacket.award4}</div>
-        <div className="award5">{newJacket.award5}</div>
-      </div>
-    )
+    if (isAthletePicked) {
+      return (
+        <div className="jacket-card">
+          <JacketCard jacket={newJacket} />
+        </div>
+      )
+    } else {
+      return <div></div>
+    }
   }
 
   const handleSubmit = async (e) => {
@@ -73,9 +70,28 @@ const AddJacket = ({
     navigate('/')
   }
 
-  const disableBtn = () => {
-    if (newJacket.emptyStars + newJacket.fullStars === 0) {
-      return 'true'
+  const handleAthleteSelection = async (event) => {
+    await setSelectedAthlete(event.target.value)
+    const chosenAthlete = await axios.get(
+      `http://localhost:3001/athletes/${event.target.value}`
+    )
+    await setNewJacket({ ...newJacket, athlete: chosenAthlete.data })
+    setIsAthletePicked(true)
+  }
+
+  const createJacketButton = () => {
+    if (newJacket.emptyStars + newJacket.fullStars > 0) {
+      return (
+        <button className="submitButton" text="Submit">
+          Create New Jacket
+        </button>
+      )
+    } else {
+      return (
+        <button className="submitButton" text="Submit" disabled>
+          Create New Jacket
+        </button>
+      )
     }
   }
 
@@ -90,8 +106,8 @@ const AddJacket = ({
           <select
             id="athlete"
             name="athlete"
-            value={newJacket.athlete}
-            onChange={handleChange}
+            value={selectedAthlete}
+            onChange={handleAthleteSelection}
           >
             <option name="athlete-choice" value="" defaultValue={''} disabled>
               Choose Existing Athlete
@@ -182,9 +198,7 @@ const AddJacket = ({
               setNewJacket({ ...newJacket, award5: e.target.value })
             }
           ></input>
-          <button className="submitButton" text="Submit">
-            Create New Jacket
-          </button>
+          {createJacketButton()}
         </form>
       </div>
       <div className="right-container">{generateSampleJacket()}</div>

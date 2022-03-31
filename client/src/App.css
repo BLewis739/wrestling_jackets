@@ -214,6 +214,8 @@ Delete Athlete Page Styling
   grid-template-columns: 200px 1fr;
 }
 
+
+
 /*
 ------------------------------
 Edit Athlete Page Styling
@@ -229,4 +231,30 @@ Edit Athlete Page Styling
   display: flex;
   justify-content: center;
   margin-top: 30px;
+}
+
+.edit-jacket .right-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.edit-jacket input,
+select,
+button {
+  display: block;
+  height: 30px;
+  width: 180px;
+  margin-bottom: 10px;
+}
+
+.edit-jacket button {
+  width: 130px;
+}
+
+.edit-jacket .star-input {
+  width: 80px;
+  font-size: 10px;
+  display: inline-block;
+  margin-right: 10px;
 }

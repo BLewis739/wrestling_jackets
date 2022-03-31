@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import axios from 'axios'
+import JacketCard from '../components/JacketCard'
 
 const DeleteJacket = ({
   athletes,
@@ -29,9 +30,12 @@ const DeleteJacket = ({
     //athleteSelected = true
   }
 
-  const handleJacketSelection = (event) => {
-    setSelectedJacket(event.target.value)
-    setIsDeleteButtonOff(false)
+  const handleJacketSelection = async (event) => {
+    await setSelectedJacket(event.target.value)
+    // const res = await axios.get(
+    //   `http://localhost:3001/jackets/${selectedJacket}`
+    // )
+    // setSelectedJacket(res.data)
   }
 
   const deleteButton = () => {
@@ -53,16 +57,37 @@ const DeleteJacket = ({
     )
   }
 
-  // const makeJacketArray = () => {
-  //   const newJacketArrayItems = jackets.filter((item) => {
-  //     return item.athlete._id === selectedAthlete
-  //   })
-  //   for (let i = 0; i < newJacketArrayItems.length; i++) {
-  //     jacketArray.push(newJacketArrayItems[i])
-  //   }
-  //   console.log(newJacketArrayItems)
-  //   console.log(jacketArray)
-  // }
+  const handlePreviewButtonClick = async () => {
+    const res = await axios.get(
+      `http://localhost:3001/jackets/${selectedJacket}`
+    )
+    setSelectedJacket(res.data)
+    setIsDeleteButtonOff(false)
+  }
+
+  const getSampleJacket = () => {
+    if (!isDeleteButtonOff) {
+      return (
+        <div>
+          <JacketCard jacket={selectedJacket} />
+        </div>
+      )
+    } else {
+      return <div></div>
+    }
+  }
+
+  const getJacketButton = () => {
+    if (!selectedJacket || !selectedAthlete) {
+      return (
+        <button onClick={handlePreviewButtonClick} disabled>
+          Preview Jacket
+        </button>
+      )
+    } else {
+      return <button onClick={handlePreviewButtonClick}>Preview Jacket</button>
+    }
+  }
 
   return (
     <div className="delete-jacket">
@@ -102,9 +127,10 @@ const DeleteJacket = ({
               </option>
             ))}
         </select>
+        {getJacketButton()}
         {deleteButton()}
       </div>
-      <div className="right-container"></div>
+      <div className="right-container">{getSampleJacket()}</div>
     </div>
   )
 }

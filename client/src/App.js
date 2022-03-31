@@ -33,10 +33,6 @@ const App = () => {
     orderNum: '62448c5406dae48881b03e0c'
   })
 
-  const handleChange = (event) => {
-    setNewJacket({ ...newJacket, athlete: event.target.value })
-  }
-
   return (
     <div className="App">
       <header>
@@ -60,13 +56,12 @@ const App = () => {
             path="AddJacket"
             element={
               <AddJacket
-                hiddenField={hiddenField}
-                handleChange={handleChange}
+                selectedAthlete={selectedAthlete}
                 newJacket={newJacket}
                 setNewJacket={setNewJacket}
                 athletes={athletes}
                 setAthletes={setAthletes}
-                orders={orders}
+                setSelectedAthlete={setSelectedAthlete}
                 setOrders={setOrders}
               />
             }

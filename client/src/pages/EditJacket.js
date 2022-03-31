@@ -42,7 +42,12 @@ const EditJacket = ({
       )
     } else {
       isJacketPicked = true
-      return <button onClick={handleButtonClick}>Get Jacket</button>
+      return (
+        <div>
+          <button onClick={handleButtonClick}>Get Jacket</button>
+          <h3>Current Jacket Info</h3>
+        </div>
+      )
     }
   }
 
