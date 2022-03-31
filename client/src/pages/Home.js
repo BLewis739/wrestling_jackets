@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react'
 const Home = ({ athletes, setAthletes, jackets, setJackets }) => {
   useEffect(() => {
     const getJackets = async () => {
-      const res = await axios.get(`http://localhost:3001/jackets`)
+      const res = await axios.get(`/jackets`)
       setAthletes(res.data.athletes)
       setJackets(res.data.jackets)
     }

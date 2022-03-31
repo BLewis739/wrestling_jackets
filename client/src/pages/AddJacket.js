@@ -15,14 +15,14 @@ const AddJacket = ({
   setIsAthletePicked
 }) => {
   const getAthletes = async () => {
-    const res = await axios.get(`http://localhost:3001/athletes`)
+    const res = await axios.get(`/athletes`)
     setAthletes(res.data)
   }
 
   useEffect(() => {
     getAthletes()
     const getOrders = async () => {
-      const res = await axios.get(`http://localhost:3001/orders`)
+      const res = await axios.get(`/orders`)
       setOrders(res.data)
     }
     getOrders()
@@ -30,9 +30,7 @@ const AddJacket = ({
 
   const handleAthleteSelection = async (event) => {
     await setSelectedAthlete(event.target.value)
-    const chosenAthlete = await axios.get(
-      `http://localhost:3001/athletes/${event.target.value}`
-    )
+    const chosenAthlete = await axios.get(`/athletes/${event.target.value}`)
     await setNewJacket({ ...newJacket, athlete: chosenAthlete.data })
     setIsAthletePicked(true)
   }
@@ -71,7 +69,7 @@ const AddJacket = ({
     e.preventDefault()
 
     axios
-      .post('http://localhost:3001/jackets', newJacket)
+      .post('/jackets', newJacket)
       .then((res) => console.log('successful add'))
       .catch((err) => console.log(err.data))
 

@@ -19,7 +19,7 @@ const EditJacket = ({
 }) => {
   useEffect(() => {
     const getJackets = async () => {
-      const res = await axios.get(`http://localhost:3001/jackets`)
+      const res = await axios.get(`/jackets`)
       setAthletes(res.data.athletes)
       setJackets(res.data.jackets)
     }
@@ -67,9 +67,7 @@ const EditJacket = ({
 
   const handleButtonClick = async () => {
     console.log('Clicked')
-    const res = await axios.get(
-      `http://localhost:3001/jackets/${selectedJacket}`
-    )
+    const res = await axios.get(`/jackets/${selectedJacket}`)
     setSelectedJacket(res.data)
     setIsButtonClicked(true)
     isJacketPicked = false
@@ -78,7 +76,7 @@ const EditJacket = ({
   const handleSubmit = async (e) => {
     e.preventDefault()
     const res = await axios.put(
-      `http://localhost:3001/jackets/${selectedJacket._id}`,
+      `/jackets/${selectedJacket._id}`,
       selectedJacket
     )
     console.log('Submitted')
