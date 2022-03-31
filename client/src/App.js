@@ -15,6 +15,7 @@ import { useState } from 'react'
 const App = () => {
   const [athletes, setAthletes] = useState([])
   const [jackets, setJackets] = useState([])
+  const [athletesWithJackets, setAthletesWithJackets] = useState([])
   const [orders, setOrders] = useState([])
   const [isButtonClicked, setIsButtonClicked] = useState(false)
   const [selectedAthlete, setSelectedAthlete] = useState('')
