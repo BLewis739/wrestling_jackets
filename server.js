@@ -106,6 +106,28 @@ app.delete('/jackets/:id', async (req, res) => {
   }
 })
 
+app.patch('/jackets/:id', async (req, res) => {
+  try {
+    const { id } = req.params
+    await Jacket.findByIdAndUpdate(
+      id,
+      req.body,
+      { new: true },
+      (err, jacket) => {
+        if (err) {
+          res.status(500).send(err)
+        }
+        if (!jacket) {
+          res.status(500).send('Jacket not found!')
+        }
+        return res.status(200).json(jacket)
+      }
+    ).clone()
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+})
+
 app.put('/jackets/:id', async (req, res) => {
   try {
     const { id } = req.params
@@ -122,7 +144,7 @@ app.put('/jackets/:id', async (req, res) => {
         }
         return res.status(200).json(jacket)
       }
-    )
+    ).clone()
   } catch (error) {
     return res.status(500).send(error.message)
   }
