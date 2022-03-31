@@ -69,7 +69,10 @@ const EditJacket = ({
   }
 
   const handleSubmit = async () => {
-    const res = await axios.put(`http://localhost:3001/jackets`, selectedJacket)
+    const res = await axios.put(
+      `http://localhost:3001/jackets/${selectedJacket._id}`,
+      selectedJacket
+    )
     console.log('Submitted')
   }
 
@@ -85,7 +88,7 @@ const EditJacket = ({
                 required
                 min="0"
                 name="emptyStars"
-                placeholder="Years JV"
+                value={selectedJacket.emptyStars}
                 onChange={(e) =>
                   setSelectedJacket({
                     ...selectedJacket,
@@ -99,7 +102,7 @@ const EditJacket = ({
                 required
                 min="0"
                 name="fullStars"
-                placeholder="Years Varsity"
+                value={selectedJacket.fullStars}
                 onChange={(e) =>
                   setSelectedJacket({
                     ...selectedJacket,
@@ -126,7 +129,7 @@ const EditJacket = ({
             <input
               type="text"
               name="award1"
-              placeholder="Award 1"
+              value={selectedJacket.award1}
               onChange={(e) =>
                 setSelectedJacket({ ...selectedJacket, award1: e.target.value })
               }
@@ -134,7 +137,7 @@ const EditJacket = ({
             <input
               type="text"
               name="award2"
-              placeholder="Award 2"
+              value={selectedJacket.award2}
               onChange={(e) =>
                 setSelectedJacket({ ...selectedJacket, award2: e.target.value })
               }
@@ -142,7 +145,7 @@ const EditJacket = ({
             <input
               type="text"
               name="award3"
-              placeholder="Award 3"
+              value={selectedJacket.award3}
               onChange={(e) =>
                 setSelectedJacket({ ...selectedJacket, award3: e.target.value })
               }
@@ -150,7 +153,7 @@ const EditJacket = ({
             <input
               type="text"
               name="award4"
-              placeholder="Award 4"
+              value={selectedJacket.award4}
               onChange={(e) =>
                 setSelectedJacket({ ...selectedJacket, award4: e.target.value })
               }
@@ -158,7 +161,7 @@ const EditJacket = ({
             <input
               type="text"
               name="award5"
-              placeholder="Award 5"
+              value={selectedJacket.award5}
               onChange={(e) =>
                 setSelectedJacket({ ...selectedJacket, award5: e.target.value })
               }
