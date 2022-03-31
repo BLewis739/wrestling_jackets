@@ -258,3 +258,28 @@ button {
   display: inline-block;
   margin-right: 10px;
 }
+
+/*
+-------------------------
+Confirmation Page Styling
+-------------------------
+*/
+
+.confirmLink {
+  border: solid black 1px;
+  padding: 5px 15px;
+  border-radius: 2px;
+  text-decoration: none;
+  font-size: 14px;
+  font-family: Helvetica, sans-serif;
+  background-color: #eeeeee;
+  color: black;
+  display: block;
+  width: 180px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.confirmLink:hover {
+  background-color: #dddddd;
+}

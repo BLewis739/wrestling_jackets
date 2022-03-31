@@ -10,10 +10,10 @@ const AddJacket = ({
   setAthletes,
   setOrders,
   selectedAthlete,
-  setSelectedAthlete
+  setSelectedAthlete,
+  isAthletePicked,
+  setIsAthletePicked
 }) => {
-  const [isAthletePicked, setIsAthletePicked] = useState(false)
-
   const getAthletes = async () => {
     const res = await axios.get(`http://localhost:3001/athletes`)
     setAthletes(res.data)
@@ -21,16 +21,21 @@ const AddJacket = ({
 
   useEffect(() => {
     getAthletes()
-
     const getOrders = async () => {
       const res = await axios.get(`http://localhost:3001/orders`)
       setOrders(res.data)
     }
-
     getOrders()
   }, [])
 
-  let navigate = useNavigate()
+  const handleAthleteSelection = async (event) => {
+    await setSelectedAthlete(event.target.value)
+    const chosenAthlete = await axios.get(
+      `http://localhost:3001/athletes/${event.target.value}`
+    )
+    await setNewJacket({ ...newJacket, athlete: chosenAthlete.data })
+    setIsAthletePicked(true)
+  }
 
   const generateSampleJacket = () => {
     if (isAthletePicked) {
@@ -43,6 +48,24 @@ const AddJacket = ({
       return <div></div>
     }
   }
+
+  const createJacketButton = () => {
+    if (newJacket.emptyStars + newJacket.fullStars > 0) {
+      return (
+        <button className="submitButton" text="Submit">
+          Create New Jacket
+        </button>
+      )
+    } else {
+      return (
+        <button className="submitButton" text="Submit" disabled>
+          Create New Jacket
+        </button>
+      )
+    }
+  }
+
+  let navigate = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -67,32 +90,7 @@ const AddJacket = ({
       orderNum: ''
     })
 
-    navigate('/')
-  }
-
-  const handleAthleteSelection = async (event) => {
-    await setSelectedAthlete(event.target.value)
-    const chosenAthlete = await axios.get(
-      `http://localhost:3001/athletes/${event.target.value}`
-    )
-    await setNewJacket({ ...newJacket, athlete: chosenAthlete.data })
-    setIsAthletePicked(true)
-  }
-
-  const createJacketButton = () => {
-    if (newJacket.emptyStars + newJacket.fullStars > 0) {
-      return (
-        <button className="submitButton" text="Submit">
-          Create New Jacket
-        </button>
-      )
-    } else {
-      return (
-        <button className="submitButton" text="Submit" disabled>
-          Create New Jacket
-        </button>
-      )
-    }
+    navigate('/ConfirmAdd')
   }
 
   return (

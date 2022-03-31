@@ -23,19 +23,44 @@ const DeleteJacket = ({
     getJackets()
   }, [])
 
-  //let athleteSelected = false
-
   const handleAthleteSelection = async (event) => {
     await setSelectedAthlete(event.target.value)
-    //athleteSelected = true
   }
 
   const handleJacketSelection = async (event) => {
     await setSelectedJacket(event.target.value)
-    // const res = await axios.get(
-    //   `http://localhost:3001/jackets/${selectedJacket}`
-    // )
-    // setSelectedJacket(res.data)
+  }
+
+  const handlePreviewButtonClick = async () => {
+    const res = await axios.get(
+      `http://localhost:3001/jackets/${selectedJacket}`
+    )
+    setSelectedJacket(res.data)
+    setIsDeleteButtonOff(false)
+  }
+
+  const getJacketButton = () => {
+    if (!selectedJacket || !selectedAthlete) {
+      return (
+        <button onClick={handlePreviewButtonClick} disabled>
+          Preview Jacket
+        </button>
+      )
+    } else {
+      return <button onClick={handlePreviewButtonClick}>Preview Jacket</button>
+    }
+  }
+
+  const getSampleJacket = () => {
+    if (!isDeleteButtonOff) {
+      return (
+        <div>
+          <JacketCard jacket={selectedJacket} />
+        </div>
+      )
+    } else {
+      return <div></div>
+    }
   }
 
   const deleteButton = () => {
@@ -55,38 +80,6 @@ const DeleteJacket = ({
     const res = await axios.delete(
       `http://localhost:3001/jackets/${selectedJacket}`
     )
-  }
-
-  const handlePreviewButtonClick = async () => {
-    const res = await axios.get(
-      `http://localhost:3001/jackets/${selectedJacket}`
-    )
-    setSelectedJacket(res.data)
-    setIsDeleteButtonOff(false)
-  }
-
-  const getSampleJacket = () => {
-    if (!isDeleteButtonOff) {
-      return (
-        <div>
-          <JacketCard jacket={selectedJacket} />
-        </div>
-      )
-    } else {
-      return <div></div>
-    }
-  }
-
-  const getJacketButton = () => {
-    if (!selectedJacket || !selectedAthlete) {
-      return (
-        <button onClick={handlePreviewButtonClick} disabled>
-          Preview Jacket
-        </button>
-      )
-    } else {
-      return <button onClick={handlePreviewButtonClick}>Preview Jacket</button>
-    }
   }
 
   return (

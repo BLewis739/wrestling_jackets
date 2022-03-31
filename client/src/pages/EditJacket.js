@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import axios from 'axios'
 import JacketCard from '../components/JacketCard'
+import { Navigate, useNavigate } from 'react-router-dom'
 
 const EditJacket = ({
   athletes,
@@ -12,7 +13,9 @@ const EditJacket = ({
   setJackets,
   jackets,
   setIsButtonClicked,
-  isButtonClicked
+  isButtonClicked,
+  isJacketPicked,
+  setIsJacketPicked
 }) => {
   useEffect(() => {
     const getJackets = async () => {
@@ -23,6 +26,8 @@ const EditJacket = ({
     getJackets()
   }, [])
 
+  let navigate = useNavigate()
+
   const handleAthleteSelection = async (event) => {
     await setSelectedAthlete(event.target.value)
   }
@@ -30,8 +35,6 @@ const EditJacket = ({
   const handleJacketSelection = (event) => {
     setSelectedJacket(event.target.value)
   }
-
-  let isJacketPicked = false
 
   const getJacketButton = () => {
     if (!selectedJacket || !selectedAthlete) {
@@ -41,11 +44,10 @@ const EditJacket = ({
         </button>
       )
     } else {
-      isJacketPicked = true
+      setIsJacketPicked(true)
       return (
         <div>
           <button onClick={handleButtonClick}>Get Jacket</button>
-          <h3>Current Jacket Info</h3>
         </div>
       )
     }
@@ -73,18 +75,21 @@ const EditJacket = ({
     isJacketPicked = false
   }
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault()
     const res = await axios.put(
       `http://localhost:3001/jackets/${selectedJacket._id}`,
       selectedJacket
     )
     console.log('Submitted')
+    navigate('/ConfirmEdit')
   }
 
   const getEditForm = () => {
     if (isButtonClicked) {
       return (
         <div className="edit-form">
+          <h3>Current Jacket Info</h3>
           <form onSubmit={handleSubmit}>
             <div className="years">
               <input
