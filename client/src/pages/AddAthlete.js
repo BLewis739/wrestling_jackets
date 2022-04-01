@@ -19,6 +19,7 @@ const AddAthlete = () => {
       name: '',
       abbrevName: ''
     })
+    navigate('/AddJacket')
   }
 
   return (

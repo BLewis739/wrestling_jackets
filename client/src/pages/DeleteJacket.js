@@ -76,6 +76,7 @@ const DeleteJacket = ({
   const handleButtonClick = async () => {
     console.log('Clicked')
     const res = await axios.delete(`/jackets/${selectedJacket._id}`)
+    navigate('/ConfirmDelete')
   }
 
   return (
