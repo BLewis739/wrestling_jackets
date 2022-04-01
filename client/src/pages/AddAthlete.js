@@ -11,7 +11,7 @@ const AddAthlete = () => {
   const handleAthleteSubmit = async (e) => {
     e.preventDefault()
     await axios
-      .post('http://localhost:3001/athletes', newAthlete)
+      .post('/athletes', newAthlete)
       .then((res) => console.log('successful add'))
       .catch((err) => console.log(err.data))
 

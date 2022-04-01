@@ -24,7 +24,7 @@ In order to keep the jacket design consistent, I need to work closely with my em
 
 The page is meant to be used and viewed by the embroiderer. On the home page, there is a button that allows the user to show all jackets in the current order. As long as the screen width is at least 1230 pixels wide, then two jacket images should appear side-by-side. The first picture shows the jacket as it should look after its embroidery is updated. The second picture shows the jacket in its current state. This allows the embroiderer to see exactly what changes need to be made. Brand-new jackets are compared to a blank jacket template.
 
-There are additional pages that allow the user to add jackets, edit jackets, and delete jackets.
+There are additional pages that allow the user to add jackets, edit jackets, and delete jackets. On each of these pages, a template of the jacket
 
 ---
 
