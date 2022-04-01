@@ -324,3 +324,54 @@ Confirmation Page Styling
 .confirmLink:hover {
   background-color: #dddddd;
 }
+
+/*
+------------------
+About Page Styling
+------------------
+*/
+
+.about {
+  display: grid;
+  grid-template-columns: 300px 1fr; 
+}
+
+.about .social-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about a {
+  border: solid black 1px;
+  padding: 5px 15px;
+  border-radius: 2px;
+  text-decoration: none;
+  font-size: 14px;
+  font-family: Helvetica, sans-serif;
+  background-color: #eeeeee;
+  color: blue;
+  display: block;
+  width: 180px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.about a:hover{
+  background-color: #dddddd;
+}
+
+.about .top-banner {
+  width:600px;
+  border: solid black 1px;
+}
+
+.about .smaller {
+  width: 191px;
+  margin: 5px 5px;
+  border: solid black 1px;
+}
+
+.about .right-container {
+  text-align: center;
+}
