@@ -32,7 +32,7 @@ const DeleteJacket = ({
   }
 
   const handlePreviewButtonClick = async () => {
-    const res = await axios.get(`/jackets/${selectedJacket._id}`)
+    const res = await axios.get(`/jackets/${selectedJacket}`)
     setSelectedJacket(res.data)
     setIsDeleteButtonOff(false)
   }
@@ -75,7 +75,7 @@ const DeleteJacket = ({
 
   const handleButtonClick = async () => {
     console.log('Clicked')
-    const res = await axios.delete(`/jackets/${selectedJacket}`)
+    const res = await axios.delete(`/jackets/${selectedJacket._id}`)
   }
 
   return (
