@@ -85,7 +85,7 @@ const AddJacket = ({
       award5: '',
       isNewJacket: true,
       isBeforeJacket: false,
-      orderNum: ''
+      orderNum: '62470ebb38b55ca3c405ebc3'
     })
 
     navigate('/ConfirmAdd')
