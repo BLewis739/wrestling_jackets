@@ -26,6 +26,9 @@ const main = async () => {
   order2.save()
   order3.save()
 
+  const orders = []
+  const athletes = []
+
   const jackets = []
 
   const athlete1 = await new Athlete({
@@ -742,7 +745,24 @@ const main = async () => {
   })
   jackets.push(jacket37)
 
+  athletes.push(athlete1)
+  athletes.push(athlete2)
+  athletes.push(athlete3)
+  athletes.push(athlete4)
+  athletes.push(athlete5)
+  athletes.push(athlete6)
+  athletes.push(athlete7)
+  athletes.push(athlete8)
+  athletes.push(athlete9)
+  athletes.push(athlete10)
+
+  orders.push(order1)
+  orders.push(order2)
+  orders.push(order3)
+
   await Jacket.insertMany(jackets)
+  await Athlete.insertMany(athletes)
+  await Order.insertMany(orders)
   console.log('Created Jackets, Athletes, and Orders')
 }
 const run = async () => {
