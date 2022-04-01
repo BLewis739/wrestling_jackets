@@ -22,7 +22,7 @@ const DeleteJacket = ({
     }
     getJackets()
   }, [])
-
+  let navigate = useNavigate()
   const handleAthleteSelection = async (event) => {
     await setSelectedAthlete(event.target.value)
   }
