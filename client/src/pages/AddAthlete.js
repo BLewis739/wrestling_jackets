@@ -1,13 +1,13 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import axios from 'axios'
-import { useNavigate, Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const AddAthlete = () => {
   const [newAthlete, setNewAthlete] = useState({
     name: '',
     abbrevName: ''
   })
-
+  let navigate = useNavigate()
   const handleAthleteSubmit = async (e) => {
     e.preventDefault()
     await axios
