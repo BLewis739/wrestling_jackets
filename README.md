@@ -20,13 +20,11 @@ In order to keep the jacket design consistent, I need to work closely with my em
 
 ---
 
-## **_Desired Structure of Finished Product_**
+## **_App Structure_**
 
-This will be a website that shows the personalized jacket design for each individual athlete. I will seed a database of the data needed for the upcoming jacket order. Each piece of jacket data will fit one of 3 categories: NEW (for a brand-new jacket to be made for the first time), OLD (for the existing design of a jacket being returned), and UPDATED (to be paired with OLD and showing the updates needed to be made).
+The page is meant to be used and viewed by the embroiderer. On the home page, there is a button that allows the user to show all jackets in the current order. As long as the screen width is at least 1230 pixels wide, then two jacket images should appear side-by-side. The first picture shows the jacket as it should look after its embroidery is updated. The second picture shows the jacket in its current state. This allows the embroiderer to see exactly what changes need to be made. Brand-new jackets are compared to a blank jacket template.
 
-Each jacket wil be rendered as a square or tile on the main page. Users will have the ability to scroll through the designs and view each althete's jacket. NEW jackets will be alone on ther rows, while OLD and UPDATED will be shown side-by-side.
-
-The site will also have functionality to be able to handle future orders. New jacket information can be entered on the site so that to generate new tiles, the database will not need to be completely re-seeded.
+There are additional pages that allow the user to add jackets, edit jackets, and delete jackets.
 
 ---
 
