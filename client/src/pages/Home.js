@@ -51,7 +51,7 @@ const Home = ({
   return (
     <div>
       <h1>Current Jacket Order</h1>
-      <button onClick={handleButtonClick}>Click to View Jackets</button>
+      <button onClick={handleButtonClick}>Click to Get Jackets</button>
 
       {athletesWithJackets.map((athlete) => (
         <div className="before-and-after">
