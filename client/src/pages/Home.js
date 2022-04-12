@@ -36,7 +36,6 @@ const Home = ({
           tempArray[j].jacketArray.push(jackets[i])
           updated = true
         }
-        console.log(j)
       }
       if (updated === false) {
         console.log('New athlete')
@@ -46,6 +45,7 @@ const Home = ({
         }
         tempArray.push(tempObject)
       }
+      updated = false
     }
     setAthletesWithJackets(tempArray)
   }
