@@ -31,14 +31,15 @@ const Home = ({
     let tempObject = {}
     let updated = false
     for (let i = 0; i < jackets.length; i++) {
-      console.log(i)
       for (let j = 0; j < tempArray.length; j++) {
         if (tempArray[j].athleteId === jackets[i].athlete._id) {
           tempArray[j].jacketArray.push(jackets[i])
           updated = true
         }
+        console.log(j)
       }
       if (updated === false) {
+        console.log('New athlete')
         tempObject = {
           athleteId: jackets[i].athlete._id,
           jacketArray: [jackets[i], newJacket]
