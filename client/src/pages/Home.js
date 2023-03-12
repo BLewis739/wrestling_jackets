@@ -38,7 +38,6 @@ const Home = ({
         }
       }
       if (updated === false) {
-        console.log('New athlete')
         tempObject = {
           athleteId: jackets[i].athlete._id,
           jacketArray: [jackets[i], newJacket]
