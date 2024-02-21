@@ -8,7 +8,7 @@ const JacketCard = ({ jacket, status }) => {
     for (let i = 0; i < emptyStars; i++) {
       starBanner.push(
         <img
-          src="https://imgur.com/AxSbxh3.png"
+          src="https://i.imgur.com/5ZJbBzV.png"
           alt="empty-star"
           key={Math.random(0, 100) * 100}
         ></img>
@@ -17,7 +17,7 @@ const JacketCard = ({ jacket, status }) => {
     for (let i = 0; i < fullStars; i++) {
       starBanner.push(
         <img
-          src="https://imgur.com/OSNaUNN.png"
+          src="https://i.imgur.com/ZeXuOdn.png"
           alt="full-star"
           key={Math.random(0, 100) * 100}
         ></img>
@@ -41,7 +41,7 @@ const JacketCard = ({ jacket, status }) => {
 
   return (
     <div className="jacket-card">
-      <img className={fade} src="https://i.imgur.com/R5gPDhR.png"></img>
+      <img className={fade} src="https://i.imgur.com/GU0AdIM.png"></img>
       <div className="status">{status}</div>
       <div className="name">{abbrevName}</div>
       <div className="role">{jacket.role}</div>
