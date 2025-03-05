@@ -83,6 +83,11 @@ const AddJacket = ({
       award3: '',
       award4: '',
       award5: '',
+      award6: '',
+      award7: '',
+      award8: '',
+      award9: '',
+      award10: '',
       isNewJacket: true,
       isBeforeJacket: false,
       orderNum: '62470ebb38b55ca3c405ebc3'
@@ -192,6 +197,46 @@ const AddJacket = ({
             placeholder="Award 5"
             onChange={(e) =>
               setNewJacket({ ...newJacket, award5: e.target.value })
+            }
+          ></input>
+          <input
+            type="text"
+            name="award6"
+            placeholder="Award 6"
+            onChange={(e) =>
+              setNewJacket({ ...newJacket, award6: e.target.value })
+            }
+          ></input>
+          <input
+            type="text"
+            name="award7"
+            placeholder="Award 7"
+            onChange={(e) =>
+              setNewJacket({ ...newJacket, award7: e.target.value })
+            }
+          ></input>
+          <input
+            type="text"
+            name="award8"
+            placeholder="Award 8"
+            onChange={(e) =>
+              setNewJacket({ ...newJacket, award8: e.target.value })
+            }
+          ></input>
+          <input
+            type="text"
+            name="award9"
+            placeholder="Award 9"
+            onChange={(e) =>
+              setNewJacket({ ...newJacket, award9: e.target.value })
+            }
+          ></input>
+          <input
+            type="text"
+            name="award10"
+            placeholder="Award 10"
+            onChange={(e) =>
+              setNewJacket({ ...newJacket, award10: e.target.value })
             }
           ></input>
           {createJacketButton()}

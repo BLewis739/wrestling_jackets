@@ -26,7 +26,7 @@
 // to a MongoDB database. For example, if it currently said: 'mongodb://127.0.0.1:27017/jacketsDatabase23'
 // then change the 23 to a 24. Then, do npm run start in the terminal
 // while in the folder wrestling_jackets. MongoDB will create the database
-// if it doesn't already exist.
+// if it doesn't already exist. ***Here so far, database is made
 
 // Now, create the new seed file in the /seed folder. Copy in the whole .txt
 // file. Make changes as necessary. The seed file can then be run to seed the database
@@ -37,6 +37,19 @@
 // Make sure to cd into the client folder, then run npm run start. You
 // also need npm run start running in the wrestling_jackets main folder so
 // that the database is connected.
+
+// If you need to adjust any of the formatting, use the App.css file
+// which is located in the src folder. Sometimes there are issues with
+// fitting the right text on one line, so adjustments can be made there.
+
+// In Feb 2024, the program was altered to include awards over 5, and
+// so far Juan is the only wrestler where this came up. Format considerations
+// should be made for future wrestlers earning more than 10 awards.
+
+// If a jacketsDatabase is made incorrectly, it can be deleted using the
+// MongoDB extension. Open MongoDB by clicking the leaf. Make sure it
+// is connected using the connection string (provided above). Right click
+// it and select Drop Database to delete it.
 
 const db = require('../db')
 const { Athlete, Jacket, Order } = require('../models')

@@ -174,6 +174,49 @@ const EditJacket = ({
                 setSelectedJacket({ ...selectedJacket, award5: e.target.value })
               }
             ></input>
+            <input
+              type="text"
+              name="award6"
+              value={selectedJacket.award6}
+              onChange={(e) =>
+                setSelectedJacket({ ...selectedJacket, award6: e.target.value })
+              }
+            ></input>
+            <input
+              type="text"
+              name="award7"
+              value={selectedJacket.award7}
+              onChange={(e) =>
+                setSelectedJacket({ ...selectedJacket, award7: e.target.value })
+              }
+            ></input>
+            <input
+              type="text"
+              name="award8"
+              value={selectedJacket.award8}
+              onChange={(e) =>
+                setSelectedJacket({ ...selectedJacket, award8: e.target.value })
+              }
+            ></input>
+            <input
+              type="text"
+              name="award9"
+              value={selectedJacket.award9}
+              onChange={(e) =>
+                setSelectedJacket({ ...selectedJacket, award9: e.target.value })
+              }
+            ></input>
+            <input
+              type="text"
+              name="award10"
+              value={selectedJacket.award10}
+              onChange={(e) =>
+                setSelectedJacket({
+                  ...selectedJacket,
+                  award10: e.target.value
+                })
+              }
+            ></input>
             <button className="submitButton" text="Submit">
               Update Jacket
             </button>

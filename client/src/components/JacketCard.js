@@ -50,6 +50,11 @@ const JacketCard = ({ jacket, status }) => {
       <div className="award3">{jacket.award3}</div>
       <div className="award4">{jacket.award4}</div>
       <div className="award5">{jacket.award5}</div>
+      <div className="award6">{jacket.award6}</div>
+      <div className="award7">{jacket.award7}</div>
+      <div className="award8">{jacket.award8}</div>
+      <div className="award9">{jacket.award9}</div>
+      <div className="award10">{jacket.award10}</div>
       <div className={starBannerClass}>{starBanner}</div>
     </div>
   )

@@ -51,41 +51,81 @@ Jacket card styling
 
 .award1 {
   position: absolute;
-  left: 20%;
-  right: 60%;
+  left: 15%;
+  right: 55%;
   top: 55%;
   bottom: 35%;
 }
 
 .award2 {
   position: absolute;
-  left: 20%;
-  right: 60%;
+  left: 15%;
+  right: 55%;
   top: 62.5%;
   bottom: 25%;
 }
 
 .award3 {
   position: absolute;
-  left: 20%;
-  right: 60%;
+  left: 15%;
+  right: 55%;
   top: 70%;
   bottom: 15%;
 }
 
 .award4 {
   position: absolute;
-  left: 20%;
-  right: 60%;
+  left: 15%;
+  right: 55%;
   top: 77.5%;
   bottom: 7.5%;
 }
 
 .award5 {
   position: absolute;
-  left: 20%;
-  right: 60%;
+  left: 18%;
+  right: 58%;
   top: 85%;
+  bottom: 0%;
+}
+
+.award6 {
+  position: absolute;
+  left: 55%;
+  right: 20%;
+  top: 62.5%;
+  bottom: 25%;
+}
+
+.award7 {
+  position: absolute;
+  left: 55%;
+  right: 20%;
+  top: 70%;
+  bottom: 15%;
+}
+
+.award8 {
+  position: absolute;
+  left: 55%;
+  right: 20%;
+  top: 77.5%;
+  bottom: 7.5%;
+}
+
+.award9 {
+  position: absolute;
+  left: 55%;
+  right: 20%;
+  top: 85%;
+  bottom: 0%;
+}
+
+.award10 {
+  position: absolute;
+  left: 55%;
+  right: 20%;
+  top: 95%;
   bottom: 0%;
 }
 
